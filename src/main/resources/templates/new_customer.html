@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Online Banking Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Online Banking Management System</h1>
+        <hr>
+        <h2>Save Customer</h2>
+
+        <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
+        
+            <input type="text" th:field="*{Cust_ID}" placeholder="Customer Id" >
+
+            <input type="text" th:field="*{Cust_Address}" placeholder="Customer Address" >
+
+            <input type="text" th:field="*{Cust_Name}" placeholder="Customer Name" >
+            
+            <input type="text" th:field="*{Cust_Password}" placeholder="Customer Password" >
+
+            <input type="text" th:field="*{Cust_Aadharno}" placeholder="Customer Aadhar Number" >
+
+            <input type="text" th:field="*{Cust_Panno}" placeholder="Customer PAN Number" >
+                       
+             <input type="text" th:field="*{Cust_Email}" placeholder="Customer Email" >
+
+            <input type="text" th:field="*{Cust_MobileNo}" placeholder="Customer Mobile No." >
+                       
+             <input type="text" th:field="*{Cust_PinCode}" placeholder="Customer PinCode" >
+
+            <input type="text" th:field="*{Cust_State}" placeholder="Customer State" >
+            
+            <input type="text" th:field="*{User_Name}" placeholder="UserName" >
+
+            <input type="text" th:field="*{Cust_NomineeName}" placeholder="Customer NomineeName" >
+                       
+            <input type="text" th:field="*{Cust_DOB}" placeholder="Customer Date Of Birth" >
+
+            <input type="text" th:field="*{Accnt_No}" placeholder="Customer Account Number" >
+
+
+
+            <button type="submit" class="btn btn-info col-2"> Save Customer</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Customer List</a>
+    </div>
+</body>
+
+</html>
