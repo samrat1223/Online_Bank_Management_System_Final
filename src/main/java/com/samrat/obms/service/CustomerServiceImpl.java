@@ -21,13 +21,14 @@ public class CustomerServiceImpl implements CustomerService {
 	//Method to fetch all the customers
 	@Override
 	public List<Customer> getAllCustomers() {
+		System.out.println("Getting data from db :" + customerRepository.findAll());
 		return customerRepository.findAll();
 	}
 
 	//Method to save a customer
 	@Override
-	public void saveCustomer(Customer customer) {
-		this.customerRepository.save(customer);
+	public Customer saveCustomer(Customer customer) {
+		return this.customerRepository.save(customer);
 
 	}
 
