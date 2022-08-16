@@ -37,8 +37,6 @@ public class Account {
 
 	@Column(name = "Cust_NomineeName")
 	private String Cust_NomineeName;
-	
-	
 
 	public long getAccnt_No() {
 		return Accnt_No;

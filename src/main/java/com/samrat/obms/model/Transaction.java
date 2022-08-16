@@ -7,32 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//Transaction class
 @Entity
-@Table(name="transaction")
+@Table(name = "transaction")
 public class Transaction {
 
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long Transaction_Id;
-	
+
 	@Column(name = "Amount")
 	private long Amount;
-	
+
 	@Column(name = "Transac_Date")
 	private String Transac_Date;
-	
+
 	@Column(name = "Sender")
 	private String Sender;
-	
+
 	@Column(name = "Receiver")
 	private String Receiver;
-	
+
 	@Column(name = "Transac_Type")
 	private String Transac_Type;
-	
+
 	@Column(name = "Accnt_No")
 	private long Accnt_No;
 
+	// Getter and setters of transaction class
 	public long getTransaction_Id() {
 		return Transaction_Id;
 	}
@@ -88,5 +90,23 @@ public class Transaction {
 	public void setAccnt_No(long accnt_No) {
 		Accnt_No = accnt_No;
 	}
-	
+
+	// Parameterized constructor of transaction class
+	public Transaction(long transaction_Id, long amount, String transac_Date, String sender, String receiver,
+			String transac_Type, long accnt_No) {
+		super();
+		Transaction_Id = transaction_Id;
+		Amount = amount;
+		Transac_Date = transac_Date;
+		Sender = sender;
+		Receiver = receiver;
+		Transac_Type = transac_Type;
+		Accnt_No = accnt_No;
+	}
+
+	public Transaction() {
+		super();
+
+	}
+
 }

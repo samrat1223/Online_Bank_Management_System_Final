@@ -14,25 +14,24 @@ import com.samrat.obms.repository.CustomerRepository;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-	//Invoking customer repository
+	// Invoking customer repository
 	@Autowired
 	private CustomerRepository customerRepository;
 
-	//Method to fetch all the customers
+	// Method to fetch all the customers
 	@Override
 	public List<Customer> getAllCustomers() {
-		System.out.println("Getting data from db :" + customerRepository.findAll());
 		return customerRepository.findAll();
 	}
 
-	//Method to save a customer
+	// Method to save a customer
 	@Override
 	public Customer saveCustomer(Customer customer) {
 		return this.customerRepository.save(customer);
 
 	}
 
-	//Method to fetch a particular customer
+	// Method to fetch a particular customer
 	@Override
 	public Customer getCustomerById(int Cust_ID) {
 		Optional<Customer> optional = customerRepository.findById(Cust_ID);
@@ -45,7 +44,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return customer;
 	}
 
-	//Delete a particular customer
+	// Delete a particular customer
 	@Override
 	public void deleteCustomerById(int Cust_ID) {
 		this.customerRepository.deleteById(Cust_ID);

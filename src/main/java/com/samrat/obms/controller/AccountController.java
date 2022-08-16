@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.samrat.obms.model.Account;
 import com.samrat.obms.service.AccountService;
 
-
 //Controller class to map the requests
 @Controller
 public class AccountController {
@@ -38,7 +37,7 @@ public class AccountController {
 		// save employee to database
 		accountService.saveAccount(account);
 		return "redirect:/account";
-		
+
 	}
 
 	@GetMapping("/showFormForAccountUpdate/{Accnt_No}")

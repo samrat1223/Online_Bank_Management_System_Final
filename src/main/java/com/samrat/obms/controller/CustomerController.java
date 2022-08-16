@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.samrat.obms.model.Customer;
 import com.samrat.obms.service.CustomerService;
 
-
 //Controller class to map the requests
 @Controller
 public class CustomerController {
