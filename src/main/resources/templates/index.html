@@ -36,7 +36,10 @@ table, th, td {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="@{/account}">Account</a>
+          <a class="nav-link active" aria-current="page" th:href="@{/account}">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/transaction}">Transaction</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -46,7 +49,7 @@ table, th, td {
     </div>
   </div>
 </nav>
-<a href="@{/account_index}">go to account</a>
+<!--  <a href="@{/account_index}">go to account</a> -->
 		<div class="container my-2">
 		<h1>Customer List</h1>
 

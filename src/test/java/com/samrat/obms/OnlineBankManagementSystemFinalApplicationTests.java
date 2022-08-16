@@ -52,18 +52,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 						.collect(Collectors.toList()));
 		assertEquals(2, customerServiceImpl.getAllCustomers().size());
 	}
-	
-
-	/*@Test
-	public void getCustomerByIdTest()
-	{
-		int Cust_ID=2;
-		when(customerRepository.findById(Cust_ID)).thenReturn(Stream
-				.of(new Customer(4, "sealdah", "Sany Das", "san123", "451444", "KJH655", "san@mail.com", 411445,
-						41211, "Gujrat", "san123", "fatherName", "2000-02-01", 414541)).collect(Collectors.toList()));
-		assertEquals(1,customerServiceImpl.getCustomerById(Cust_ID).size());
-	}*/
-	
+		
 	@Test
 	public void saveCustomerTest() {
 		Customer customer  = new Customer(8, "Jaipur", "Sanai Das", "sana123", "451944", "KKJ655", "sana@mail.com", 4574445,
@@ -71,6 +60,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		when(customerRepository.save(customer)).thenReturn(customer);
 		assertEquals(customer,customerServiceImpl.saveCustomer(customer));
 	}
+	
 	
 	@Test
 	public void deleteCustomerTest() {
