@@ -37,7 +37,7 @@ public class AccountController {
 	public String saveAccount(@ModelAttribute("account") Account account) {
 		// save employee to database
 		accountService.saveAccount(account);
-		return "redirect:/";
+		return "redirect:/account";
 		
 	}
 
@@ -57,6 +57,6 @@ public class AccountController {
 
 		// call delete employee method
 		this.accountService.deleteAccountById(Accnt_No);
-		return "redirect:/";
+		return "redirect:/account";
 	}
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Banking Management System</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+    	crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<h1> Banking Management System</h1>
+<hr>
+<h2> Save Transaction </h2>
+
+<form action:"#"  th:action="@{/saveTransaction}" th:object = "${transaction}" method="POST">
+	<input type="text" th:field = "*{Transaction_Id}" placeholder="Transaction ID" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Amount}" placeholder="Amount in Rupees" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Transac_Date}" placeholder="Transaction Date" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Sender}" placeholder="Sender Name" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Receiver}" placeholder="Receiver Name" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Transac_Type}" placeholder="Credit or withdrawl" class="form-control" mb-7 col-7>
+	<input type="text" th:field = "*{Accnt_No}" placeholder="Account Number" class="form-control" mb-7 col-7>
+	
+	<button type="submit" class="btn btn-info col-2"> Save Transaction</button>
+</form>
+</div>
+
+
+</body>
+</html>
