@@ -14,24 +14,24 @@ import com.samrat.obms.repository.AccountRepository;
 @Service
 public class AccountServiceImpl implements AccountService {
 
-	//Invoking account repository
+	// Invoking account repository
 	@Autowired
 	private AccountRepository accountRepository;
 
-	//Method to fetch all the accounts
+	// Method to fetch all the accounts
 	@Override
 	public List<Account> getAllAccounts() {
 		return accountRepository.findAll();
 	}
 
-	//Method to save a account
+	// Method to save a account
 	@Override
-	public void saveAccount(Account account) {
-		this.accountRepository.save(account);
+	public Account saveAccount(Account account) {
+		return this.accountRepository.save(account);
 
 	}
 
-	//Method to fetch a particular account
+	// Method to fetch a particular account
 	@Override
 	public Account getAccountById(long Accnt_No) {
 		Optional<Account> optional = accountRepository.findById(Accnt_No);
@@ -44,7 +44,7 @@ public class AccountServiceImpl implements AccountService {
 		return account;
 	}
 
-	//Delete a particular account
+	// Delete a particular account
 	@Override
 	public void deleteAccountById(long Accnt_No) {
 		this.accountRepository.deleteById(Accnt_No);
