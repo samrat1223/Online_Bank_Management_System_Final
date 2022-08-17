@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -23,7 +23,9 @@
 				<button class="btn btn-lg btn-primary" name="Submit" value="Login" type="Submit" th:text="Login" style="margin-right:10px;"></button>
 				<a href="/recover-password">Forgot password?</a>
 			</form>
+			<a th:href="@{/register}" class="btn btn-primary" style="margin-top:10px">Register if you have not already</a>
 		</div>
 	</div>
 </body>
 </html>
+
