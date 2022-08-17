@@ -13,17 +13,19 @@
 <hr>
 <h2> Save Transaction </h2>
 
-<form action:"#"  th:action="@{/saveTransaction}" th:object = "${transaction}" method="POST">
-	<input type="text" th:field = "*{Transaction_Id}" placeholder="Transaction ID" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Amount}" placeholder="Amount in Rupees" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Transac_Date}" placeholder="Transaction Date" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Sender}" placeholder="Sender Name" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Receiver}" placeholder="Receiver Name" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Transac_Type}" placeholder="Credit or withdrawl" class="form-control" mb-7 col-7>
-	<input type="text" th:field = "*{Accnt_No}" placeholder="Account Number" class="form-control" mb-7 col-7>
+<form action:"#"  th:action="@{/saveTransaction}" th:object = "${transaction}" method="POST"><br/>
+	<input type="text" th:field = "*{Transaction_Id}" placeholder="Transaction ID" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Amount}" placeholder="Amount in Rupees" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Transac_Date}" placeholder="Transaction Date" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Sender}" placeholder="Sender Name" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Receiver}" placeholder="Receiver Name" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Transac_Type}" placeholder="Credit or withdrawl" class="form-control" mb-7 col-7> <br/>
+	<input type="text" th:field = "*{Accnt_No}" placeholder="Account Number" class="form-control" mb-7 col-7> <br/>
 	
 	<button type="submit" class="btn btn-info col-2"> Save Transaction</button>
 </form>
+
+<a th:href="@{/transaction}" class="btn btn-primary" style="margin-left:500px">Back</a>
 </div>
 
 
