@@ -186,6 +186,7 @@ public class Customer {
 		Accnt_No = accnt_No;
 	}
 
+	//Default Constructor
 	public Customer() {
 		super();
 	}

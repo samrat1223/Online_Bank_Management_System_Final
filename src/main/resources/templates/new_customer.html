@@ -15,42 +15,42 @@
 
         <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
         
-            <input type="text" th:field="*{Cust_ID}" placeholder="Customer Id" >
+            <input type="text" th:field="*{Cust_ID}" placeholder="Customer Id" ><br><br>
 
-            <input type="text" th:field="*{Cust_Address}" placeholder="Customer Address" >
+            <input type="text" th:field="*{Cust_Address}" placeholder="Customer Address" ><br><br>
 
-            <input type="text" th:field="*{Cust_Name}" placeholder="Customer Name" >
+            <input type="text" th:field="*{Cust_Name}" placeholder="Customer Name" ><br><br>
             
-            <input type="text" th:field="*{Cust_Password}" placeholder="Customer Password" >
+            <input type="text" th:field="*{Cust_Password}" placeholder="Customer Password" ><br><br>
 
-            <input type="text" th:field="*{Cust_Aadharno}" placeholder="Customer Aadhar Number" >
+            <input type="text" th:field="*{Cust_Aadharno}" placeholder="Customer Aadhar Number" ><br><br>
 
-            <input type="text" th:field="*{Cust_Panno}" placeholder="Customer PAN Number" >
+            <input type="text" th:field="*{Cust_Panno}" placeholder="Customer PAN Number" ><br><br>
                        
-             <input type="text" th:field="*{Cust_Email}" placeholder="Customer Email" >
+             <input type="text" th:field="*{Cust_Email}" placeholder="Customer Email" ><br><br>
 
-            <input type="text" th:field="*{Cust_MobileNo}" placeholder="Customer Mobile No." >
+            <input type="text" th:field="*{Cust_MobileNo}" placeholder="Customer Mobile No." ><br><br>
                        
-             <input type="text" th:field="*{Cust_PinCode}" placeholder="Customer PinCode" >
+             <input type="text" th:field="*{Cust_PinCode}" placeholder="Customer PinCode" ><br><br>
 
-            <input type="text" th:field="*{Cust_State}" placeholder="Customer State" >
+            <input type="text" th:field="*{Cust_State}" placeholder="Customer State" ><br><br>
             
-            <input type="text" th:field="*{User_Name}" placeholder="UserName" >
+            <input type="text" th:field="*{User_Name}" placeholder="UserName" ><br><br>
 
-            <input type="text" th:field="*{Cust_NomineeName}" placeholder="Customer NomineeName" >
+            <input type="text" th:field="*{Cust_NomineeName}" placeholder="Customer NomineeName" ><br><br>
                        
-            <input type="text" th:field="*{Cust_DOB}" placeholder="Customer Date Of Birth" >
+            <input type="text" th:field="*{Cust_DOB}" placeholder="Customer Date Of Birth" ><br><br>
 
-            <input type="text" th:field="*{Accnt_No}" placeholder="Customer Account Number" >
+            <input type="text" th:field="*{Accnt_No}" placeholder="Customer Account Number" ><br><br>
 
 
 
-            <button type="submit" class="btn btn-info col-2"> Save Customer</button>
+            <button type="submit" class="btn btn-danger"> Save Customer</button>
         </form>
 
         <hr>
 
-        <a th:href="@{/}"> Back to Customer List</a>
+        <a th:href="@{/view}" > Back to Customer List</a>
     </div>
 </body>
 

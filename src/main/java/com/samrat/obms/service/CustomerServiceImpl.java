@@ -2,6 +2,7 @@ package com.samrat.obms.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import com.samrat.obms.repository.CustomerRepository;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+	final Logger logger=Logger.getLogger(CustomerServiceImpl.class.getName());
+	
 	// Invoking customer repository
 	@Autowired
 	private CustomerRepository customerRepository;
@@ -50,5 +53,13 @@ public class CustomerServiceImpl implements CustomerService {
 		this.customerRepository.deleteById(Cust_ID);
 
 	}
-
+	
+	// Fetching a user bu email
+	 @Override 
+	 public Customer findByemail(String email) { 
+		 Optional<Customer>customer = this.customerRepository.findByemail(email);
+	  
+	 return customer.orElse(null); 
+	 }
+	 
 }

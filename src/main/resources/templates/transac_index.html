@@ -12,9 +12,17 @@
 
 
 </head>
+
+<style>
+table, th, td {
+	border: 1px solid green;
+}
+
+</style>
+
 <body>
 
-<nav class="navbar navbar-expand-lg bg-primary" >
+<nav class="navbar navbar-expand-lg bg-success" >
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">OBMS Bank</a>
 			<button class="navbar-toggler" type="button"
@@ -34,7 +42,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" th:href="@{/}">customerlist</a></li>
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/login}">Logout</a></li>
+						aria-current="page" th:href="@{/}">Logout</a></li>
 				</ul>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -46,10 +54,10 @@
 	</nav>
 
 <div class="container my-2">
-<h1 style="margin-left:500px">Transaction Details </h1> <hr/>
+<h1 style="margin-left:400px">Transaction Details </h1> <hr/>
 
 <!--  <a th:href = "@{/TransacDetails}" class="btn btn-primary btn-sm mb-3"> Get Transaction Details </a> -->
-	<table border="1" class= "table table-striped table-responsive-md" style="margin-top:40px">
+	<table style="width:100%">
 		<thread>
 			<tr>
 				<th> Transaction_Id </th>
@@ -75,9 +83,11 @@
 			</tr>
 		</tbody>
 	</table>
-
-<a th:href="@{/}" class="btn btn-primary" style="margin-left:500px">Back</a>
-<a th:href = "@{/showNewTransactionForm}" class="btn btn-primary" style="margin-left:80px"> Insert Transaction </a>
+	<br>
+	<div>
+		<a th:href="@{/view}" class="btn btn-danger" style="margin-left:500px">Back</a>
+		<a th:href = "@{/showNewTransactionForm}" class="btn btn-success" style="margin-left:80px"> Insert Transaction </a>
+	</div>
 
 </div>
 

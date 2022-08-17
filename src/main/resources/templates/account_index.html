@@ -14,10 +14,15 @@
 
 
 </head>
+<style>
+	table, th, td {
+		border: 1px solid green;
+	}
 
+</style>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-success">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">OBMS Bank</a>
 			<button class="navbar-toggler" type="button"
@@ -37,7 +42,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" th:href="@{/transaction}">Transaction</a></li>
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/login}">Logout</a></li>
+						aria-current="page" th:href="@{/}">Logout</a></li>
 				</ul>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -49,10 +54,10 @@
 	</nav>
 
 	<div class="container my-2">
-		<h1 style="margin-left:500px">Account List</h1> <hr/>
+		<h1 style="margin-left:450px">Account List</h1> <hr/>
 
 
-		<table border="1" class="table table-striped table-responsive-md" style="margin-top:80px">
+		<table style="width:100%">
 			<thead>
 				<tr>
 					<th>Account Number</th>
@@ -80,15 +85,18 @@
 					<td th:text="${account.Cust_NomineeName}"></td>
 					<td><a
 						th:href="@{/showFormForAccountUpdate/{Accnt_No}(Accnt_No=${account.Accnt_No})}"
-						class="btn btn-primary">Update</a> <a
-						th:href="@{/deleteAccount/{Accnt_No}(Accnt_No=${account.Accnt_No})}"
-						class="btn btn-danger">Delete</a></td>
+						class="btn btn-outline-primary">Update</a><br>
+						<a th:href="@{/deleteAccount/{Accnt_No}(Accnt_No=${account.Accnt_No})}"
+						class="btn btn-outline-danger">Delete</a></td>
 				</tr>
 			</tbody>
 		</table>
-		<a th:href="@{/}" class="btn btn-primary" style="margin-left:500px">Back</a>
-		<a th:href="@{/showNewAccountForm}"
-			class="btn btn-primary" style="margin-left:100px"> Add Account </a>
+		<br>
+		<div>
+			<a th:href="@{/view}" class="btn btn-danger" style="margin-left:500px">Back</a>
+			<a th:href="@{/showNewAccountForm}"
+				class="btn btn-success" style="margin-left:100px"> Add Account </a>
+		</div>
 	</div>
 </body>
 

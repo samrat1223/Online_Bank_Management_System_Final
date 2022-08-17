@@ -16,15 +16,14 @@
 </head>
 <style>
 table, th, td {
-	border: 2px solid white;
-	background-color: black;
-	color: white;
+	border: 2px solid green;
 }
+
 </style>
 
 <body>
 
-	<nav class="navbar navbar-expand-lg bg-primary">
+	<nav class="navbar navbar-expand-lg bg-success">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">OBMS Bank</a>
 			<button class="navbar-toggler" type="button"
@@ -35,16 +34,16 @@ table, th, td {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
+				<!--	<li class="nav-item"><a class="nav-link active"
 						aria-current="page" th:href="@{/login?error=true}">Login</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/register}">Register</a></li>
+						aria-current="page" th:href="@{/register}">Register</a></li> -->
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" th:href="@{/account}">Account</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" th:href="@{/transaction}">Transaction</a></li>
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/login}">Logout</a></li>
+						aria-current="page" th:href="@{/}">Logout</a></li>
 				</ul>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -55,21 +54,16 @@ table, th, td {
 		</div>
 	</nav>
 	<!--  <a href="@{/account_index}">go to account</a> -->
- <div class="container my-2">
+ <div class="my-2" style="margin-left: 0px">
 		<h1 style="margin-left:500px">Customer List</h1> <hr/>
-
-		
-
-		<div class="card" style="margin-top: 40px;">
-			<div class="card-item">
-				<table style="width: 100%">
+				<table style="width:100%">
 
 
 					<thead>
 						<tr>
 							<th>Customer ID</th>
 							<th>Customer Name</th>
-							<th>Customer AadharNumber</th>
+							<th>Customer Aadhar Number</th>
 							<th>Customer Address</th>
 							<th>Customer PanNumber</th>
 							<th>Customer Email</th>
@@ -78,14 +72,14 @@ table, th, td {
 							<th>Customer PinCode</th>
 							<th>Customer State</th>
 							<th>Customer UserName</th>
-							<th>Customer DateOfBirth</th>
+							<th>Customer DateOf Birth</th>
 							<th>Account Number</th>
-							<th>Customer NomineeName</th>
+							<th>Nominee Name</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="customer : ${listCustomers}">
+						<tr scope="col" th:each="customer : ${listCustomers}">
 							<td th:text="${customer.Cust_ID}"></td>
 							<td th:text="${customer.Cust_Name}"></td>
 							<td th:text="${customer.Cust_Aadharno}"></td>
@@ -104,16 +98,15 @@ table, th, td {
 
 							<td><a
 								th:href="@{/showFormForUpdate/{Cust_ID}(Cust_ID=${customer.Cust_ID})}"
-								class="btn btn-primary">Update</a> <a
+								class="btn btn-outline-primary">Update</a><br> <a
 								th:href="@{/deleteCustomer/{Cust_ID}(Cust_ID=${customer.Cust_ID})}"
-								class="btn btn-danger">Delete</a></td>
+								class="btn btn-outline-danger">Delete</a></td>
 						</tr>
 					</tbody>
 				</table>
-			</div>
-		</div>
+
 		<a th:href="@{/showNewCustomerForm}"
-			class="btn btn-primary btn-sm mb-3" style="margin-left:550px;margin-top:40px"> Add Customer </a>
+			class="btn btn-success btn-sm mb-3" style="margin-left:550px;margin-top:40px"> Add Customer </a>
 	</div>
 </body>
 

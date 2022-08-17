@@ -19,6 +19,7 @@ import org.hibernate.validator.constraints.Length;
 
 import com.samrat.obms.model.Role;
 
+//User table
 @Entity
 @Table(name = "auth_user")
 public class User {
