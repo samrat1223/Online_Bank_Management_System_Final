@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<style>
+table, th, td {
+	border: 1px solid green;
+}
+</style>
+
+<body>
+
+	<h1 class="display-1" style="margin-left: 500px">Account Details</h1>
+	<hr />
+	<table style="width: 100%">
+		<thead class="table-dark">
+			<tr>
+				<th>Account Number</th>
+				<th>Account Type</th>
+				<th>Account Balance</th>
+				<th>IFSC Code</th>
+				<th>Opening Date</th>
+				<th>Branch Name</th>
+				<th>Branch Code</th>
+				<th>Customer ID</th>
+				<th>Customer Nominee Name</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="acc: ${account}">
+				<td th:text="${acc.Accnt_No}"></td>
+				<td th:text="${acc.Accnt_Type}"></td>
+				<td th:text="${acc.Accnt_Balance}"></td>
+				<td th:text="${acc.IFSC_Code}"></td>
+				<td th:text="${acc.Opening_Date}"></td>
+				<td th:text="${acc.Branch_Name}"></td>
+				<td th:text="${acc.Branch_Code}"></td>
+				<td th:text="${acc.Cust_ID}"></td>
+				<td th:text="${acc.Cust_NomineeName}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a th:href="@{/home}" class="btn btn-danger btn-sm mb-3"
+		style="margin-left: 550px; margin-top: 40px"> Back </a>
+
+	</p>
+	</form>
+
+</body>
+</html>

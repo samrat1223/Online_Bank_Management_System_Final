@@ -1,6 +1,7 @@
 package com.samrat.obms.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.samrat.obms.model.Customer;
 
@@ -18,4 +19,6 @@ public interface CustomerService {
 
 	// Method to delete a account by accnt_no
 	void deleteCustomerById(int Cust_ID);
+	
+	Customer findByemail(String email);
 }

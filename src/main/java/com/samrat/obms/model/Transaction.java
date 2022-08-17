@@ -104,6 +104,7 @@ public class Transaction {
 		Accnt_No = accnt_No;
 	}
 
+	//Default Constructor
 	public Transaction() {
 		super();
 

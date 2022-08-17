@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+	div{
+		display: grid;
+		justify-content: center;
+		margin:auto;
+	}
+</style>
+
+<body>
+<h1 class="display-1" style="margin-left:500px">User Details</h1> <hr/>
+	<div>
+		<form th:object = "${customer}">
+			<p>
+				<strong>Cust_ID :</strong>
+				<span th:text="${customer.Cust_ID}">Cust_ID</span><br/>
+				
+				<strong>Cust_Address :</strong>
+				<span th:text="${customer.Cust_Address}">Cust_Address</span><br/>
+				
+				<strong>Cust_Name :</strong>
+				<span th:text="${customer.Cust_Name}">Cust_Name</span><br/>
+				
+				<strong>Cust_Password :</strong>
+				<span th:text="${customer.Cust_Password}">Cust_Password</span><br/>
+				
+				<strong>Cust_AdharNo :</strong>
+				<span th:text="${customer.Cust_Aadharno}">Cust_AdharNo</span><br/>
+				
+				<strong>Cust_Panno :</strong>
+				<span th:text="${customer.Cust_Panno}">Cust_Panno</span><br/>
+				
+				<strong>Cust_Email :</strong>
+				<span th:text="${customer.Cust_Email}">Cust_Email</span><br/>
+				
+				<strong>Cust_MobileNo :</strong>
+				<span th:text="${customer.Cust_MobileNo}">Cust_MobileNo</span><br/>
+				
+				<strong>Cust_PinCode :</strong>
+				<span th:text="${customer.Cust_PinCode}">Cust_PinCode</span><br/>
+				
+				<strong>Cust_State :</strong>
+				<span th:text="${customer.Cust_State}">Cust_State</span><br/>
+				
+				<strong>User_Name :</strong>
+				<span th:text="${customer.User_Name}">User_Name</span><br/>
+				
+				<strong>Cust_NomineeName :</strong>
+				<span th:text="${customer.Cust_NomineeName}">Cust_NomineeName</span><br/>
+				
+				<strong>Cust_DOB :</strong>
+				<span th:text="${customer.Cust_DOB}">Cust_DOB</span><br/>
+				
+				<strong>Accnt_No:</strong>
+				<span th:text="${customer.Accnt_No}">Accnt_No</span><br/>	
+			</p>
+		</form>	
+		<a th:href="@{/home}"
+					class="btn btn-danger btn-sm mb-3" style="margin-left:550px;margin-top:40px"> Back </a>	
+	</div>
+</body>
+</html>

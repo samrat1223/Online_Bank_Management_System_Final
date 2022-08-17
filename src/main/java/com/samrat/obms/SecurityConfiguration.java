@@ -13,6 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+//Spring Configuration annotation indicates that the class has @Bean definition methods. 
+//So Spring container can process the class and generate Spring Beans to be used in the application . 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -47,6 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/login").permitAll()
 				.antMatchers("/register").permitAll()
 				.antMatchers("/home/**").hasAnyAuthority("SUPER_USER", "ADMIN_USER", "SITE_USER")
+				.antMatchers("/user/**").hasAnyAuthority("SITE_USER")
 				.antMatchers("/admin/**").hasAnyAuthority("SUPER_USER", "ADMIN_USER")
 				.anyRequest().authenticated()
 				.and()

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+table, th, td {
+	border: 1px solid green;
+}
+
+</style>
+<body>
+		 <h1 class="display-1" style="margin-left:500px">Transaction Details</h1> <hr/>
+		  <table style="width:100%">
+			<thead class="table-dark">
+				<tr>
+					<th>Transaction ID</th>
+					<th>Amount</th>
+					<th>Transaction Date</th>
+					<th>Sender</th>
+					<th>Receiver</th>
+					<th>Transaction Type</th>
+					<th>Account Number</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="trans: ${transaction}">
+					<td th:text="${trans.Transaction_Id}"></td>
+					<td th:text="${trans.Amount}"></td>
+					<td th:text="${trans.Transac_Date}"></td>
+					<td th:text="${trans.Sender}"></td>
+					<td th:text="${trans.Receiver}"></td>
+					<td th:text="${trans.Transac_Type}"></td>
+					<td th:text="${trans.Accnt_No}"></td>
+					<!-- <td th:text="${room.startTime}"></td>
+					<td th:text="${room.endTime}"></td>
+					<td th:text="${room.description}"></td> -->
+				</tr>
+			</tbody>
+		</table>
+		
+		<a th:href="@{/home}"
+			class="btn btn-danger btn-sm mb-3" style="margin-left:550px;margin-top:40px"> Back </a>
+		
+	</p>
+</form>
+
+</body>
+</html>

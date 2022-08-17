@@ -8,7 +8,7 @@
 <body>
 <!--  <a th:href="@{/}">Go to Admin</a> -->
 
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">OBMS Bank</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
         </li>
     
         <li class=nav-item>
-        <a class="nav-link" th:href="@{/login}">Logout</a>
+        <a class="nav-link" th:href="@{/}">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -42,30 +42,30 @@
   <a href="Transaction.jsp">View Transactions</a>
   <br/>  -->
   
-   <div class="card text-bg-dark border-primary" style="width: 20rem;margin-top:200px">
+   <div class="card border-success" style="width: 20rem;margin-top:200px">
   <div class="card-body">
     <h5 class="card-title">Account Details</h5>
     <h6 class="card-subtitle mb-2 text-muted">View Account</h6>
     <p class="card-text">Click here to view information related to your Account</p>
-    <a href="#" class="btn btn-primary">Account</a>
+    <a th:href="@{/accountList}" class="btn btn-outline-success">Account</a>
     <!--  <a href="#" class="btn btn-primary">Another link</a> -->
   </div>
 </div>
- <div class="card text-bg-dark border-primary" style="width: 20rem;margin-top:200px;margin-left:20px">
+ <div class="card border-success" style="width: 20rem;margin-top:200px;margin-left:20px">
   <div class="card-body">
     <h5 class="card-title">Your Details</h5>
     <h6 class="card-subtitle mb-2 text-muted">Your Details</h6>
     <p class="card-text">Click here to view information related to you</p>
-    <a href="#" class="btn btn-primary">You</a>
+    <a th:href="@{/user}" class="btn btn-outline-success">You</a>
     <!--  <a href="#" class="btn btn-primary">Another link</a> -->
   </div>
 </div>
- <div class="card text-bg-dark" style="width: 20rem;margin-top:200px;;margin-left:20px">
+ <div class="card border-success" style="width: 20rem;margin-top:200px;;margin-left:20px">
   <div class="card-body">
     <h5 class="card-title">Transaction</h5>
     <h6 class="card-subtitle mb-2 text-muted">View Transaction</h6>
     <p class="card-text">Click here to view information related to all transactions</p>
-    <a href="#" class="btn btn-primary">Transaction</a>
+    <a th:href="@{/transactionList}" class="btn btn-outline-success">Transaction</a>
     <!--  <a href="#" class="btn btn-primary">Another link</a> -->
   </div>
 </div>

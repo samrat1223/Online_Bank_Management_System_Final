@@ -38,6 +38,7 @@ public class Account {
 	@Column(name = "Cust_NomineeName")
 	private String Cust_NomineeName;
 
+	//Getter Setter methods of Account class
 	public long getAccnt_No() {
 		return Accnt_No;
 	}
@@ -125,6 +126,7 @@ public class Account {
 		Cust_NomineeName = cust_NomineeName;
 	}
 
+	//Default Constructor
 	public Account() {
 		super();
 	}

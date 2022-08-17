@@ -2,6 +2,7 @@ package com.samrat.obms.service;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +16,9 @@ import com.samrat.obms.repository.UserRepository;
 //This will help to autowire in controllers
 @Service
 public class UserServiceImpl implements UserService {
+	
+	final Logger logger=Logger.getLogger(UserServiceImpl.class.getName());
+	
 	@Autowired
 	BCryptPasswordEncoder encoder;
 	

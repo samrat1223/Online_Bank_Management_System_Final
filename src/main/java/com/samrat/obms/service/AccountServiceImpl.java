@@ -2,6 +2,7 @@ package com.samrat.obms.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import com.samrat.obms.repository.AccountRepository;
 @Service
 public class AccountServiceImpl implements AccountService {
 
+	final Logger logger=Logger.getLogger(AccountServiceImpl.class.getName());
+	
 	// Invoking account repository
 	@Autowired
 	private AccountRepository accountRepository;
