@@ -1,6 +1,6 @@
 package com.samrat.obms.controller;
 
-import java.util.List;
+//import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpSession;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.samrat.obms.model.Account;
-import com.samrat.obms.model.Customer;
+//import com.samrat.obms.model.Customer;
 import com.samrat.obms.service.AccountService;
 
 //Controller class to map the requests
@@ -22,7 +22,7 @@ import com.samrat.obms.service.AccountService;
 public class AccountController {
 
 	final Logger logger = Logger.getLogger(AccountController.class.getName());
-
+	private static final String ACCOUNT = "account";
 	// Invoking accountservice interface
 	@Autowired
 	private AccountService accountService;
@@ -39,13 +39,13 @@ public class AccountController {
 	public String showNewAccountForm(Model model) {
 		// create model attribute to bind form data
 		Account account = new Account();
-		model.addAttribute("account", account);
+		model.addAttribute(ACCOUNT, account);
 		return "new_account";
 	}
 
 	// PostMapping to save a account
 	@PostMapping("/saveAccount")
-	public String saveAccount(@ModelAttribute("account") Account account) {
+	public String saveAccount(@ModelAttribute(ACCOUNT) Account account) {
 		// save account to database
 		accountService.saveAccount(account);
 		return "redirect:/account";
@@ -60,7 +60,7 @@ public class AccountController {
 		Account account = accountService.getAccountById(Accnt_No);
 
 		// set account as a model attribute to pre-populate the form
-		model.addAttribute("account", account);
+		model.addAttribute(ACCOUNT, account);
 		return "update_account";
 	}
 
@@ -76,7 +76,7 @@ public class AccountController {
 	// Fetching the list of all accounts
 	@GetMapping("/accountList")
 	public String accountdetails(Model model, HttpSession session) {
-		model.addAttribute("account", accountService.getAllAccounts());
+		model.addAttribute(ACCOUNT, accountService.getAllAccounts());
 		return "accountdetails";
 	}
 }

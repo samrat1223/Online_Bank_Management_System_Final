@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.samrat.obms.exceptions.CustomerNotFound;
 import com.samrat.obms.model.Customer;
 import com.samrat.obms.repository.CustomerRepository;
 
@@ -42,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 		if (optional.isPresent()) {
 			customer = optional.get();
 		} else {
-			throw new RuntimeException(" Customer not found for id :: " + Cust_ID);
+			throw new CustomerNotFound(" Customer not found for id :: " + Cust_ID);
 		}
 		return customer;
 	}
