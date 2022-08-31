@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.samrat.obms.exceptions.AccountNotFound;
 import com.samrat.obms.model.Account;
 import com.samrat.obms.repository.AccountRepository;
 
@@ -42,7 +43,7 @@ public class AccountServiceImpl implements AccountService {
 		if (optional.isPresent()) {
 			account = optional.get();
 		} else {
-			throw new RuntimeException(" Account not found for id :: " + Accnt_No);
+			throw new AccountNotFound(" Account not found for id :: " + Accnt_No);
 		}
 		return account;
 	}

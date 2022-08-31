@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.samrat.obms.exceptions.TransactionNotFound;
 import com.samrat.obms.model.Transaction;
 import com.samrat.obms.repository.TransactionRepository;
 
@@ -44,7 +45,7 @@ public class TransactionServiceImpl implements TransactionService {
 			transaction = optional.get();
 
 		} else {
-			throw new RuntimeException(" Transaction not found for this Transac_id :: " + Transaction_Id);
+			throw new TransactionNotFound(" Transaction not found for this Transac_id :: " + Transaction_Id);
 		}
 
 		return transaction;

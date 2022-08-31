@@ -17,7 +17,7 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
-import com.samrat.obms.controller.AccountController;
+//import com.samrat.obms.controller.AccountController;
 
 //LoginHandler to handle the authentication for separating the User and Admin role
 @Configuration

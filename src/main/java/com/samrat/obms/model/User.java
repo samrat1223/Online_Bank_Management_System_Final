@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.samrat.obms.model.Role;
+//import com.samrat.obms.model.Role;
 
 //User table
 @Entity

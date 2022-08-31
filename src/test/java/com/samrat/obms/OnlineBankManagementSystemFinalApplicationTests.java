@@ -61,7 +61,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 
 	// TestCase for getUser method
 	@Test
-	public void getAllCustomersTest() {
+	 void getAllCustomersTest() {
 		when(customerRepository.findAll())
 				.thenReturn(Stream
 						.of(new Customer(4, "sealdah", "Sany Das", "san123", "451444", "KJH655", "san@mail.com", 411445,
@@ -74,7 +74,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test Case for save a customer
 	@Test
-	public void saveCustomerTest() {
+	 void saveCustomerTest() {
 		Customer customer  = new Customer(8, "Jaipur", "Sanai Das", "sana123", "451944", "KKJ655", "sana@mail.com", 4574445,
 				410141, "Bihar", "sana123", "fatherName", "2004-02-01", 403541);
 		when(customerRepository.save(customer)).thenReturn(customer);
@@ -84,7 +84,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test Case for delete a user by Cust_Id 
 	@Test
-	public void deleteCustomerTest() {
+	 void deleteCustomerTest() {
 		int Cust_Id=8;
 		customerServiceImpl.deleteCustomerById(Cust_Id);
 		verify(customerRepository,times(1)).deleteById(8);
@@ -95,7 +95,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test Case for getallAccount method
 	@Test
-	public void getAllAccountsTest() {
+	 void getAllAccountsTest() {
 		when(accountRepository.findAll()).thenReturn(Stream.of(new Account(120144,"savings",145874,"454kl","2014-10-14",
 				"khardah","14511",41244,"mothername"),new Account(123104,"current",140354,"454lPo","2003-11-15",
 				"rahara","17502",41017,"fathername")).collect(Collectors.toList()));
@@ -104,7 +104,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test Case for save account method
 	@Test
-	public void saveAccountTest() {
+	 void saveAccountTest() {
 		Account account = new Account(12475,"savings",140814,"4547pl","2001-05-14",
 				"Kalighat","13501",48444,"fathername");
 		when(accountRepository.save(account)).thenReturn(account);
@@ -114,7 +114,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test Case for delete a user by Accnt_No
 	@Test
-	public void deleteAccountTest() {
+	 void deleteAccountTest() {
 		long Accnt_No=12475;
 		accountServiceImpl.deleteAccountById(Accnt_No);
 		verify(accountRepository,times(1)).deleteById((long) 12475);
@@ -124,7 +124,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//Test case for getAllTransaction Method
 	@Test
-	public void getAllTransactionTest() {
+	 void getAllTransactionTest() {
 		when(transactionRepository.findAll()).thenReturn(Stream.of(new Transaction(14781,4788,"2021-10-10","Ram",
 				"Shyam","Credit",411444),new Transaction(14714,4008,"2022-10-10","Ramu",
 						"Jane","Debit",406144)).collect(Collectors.toList()));
@@ -133,7 +133,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	
 	//TestCase for saveTransaction
 	@Test
-	public void saveTransactionTest()
+	 void saveTransactionTest()
 	{
 		Transaction transaction = new Transaction(18641,5701,"2022-11-05","Rani",
 				"Raghu","Credit",410178);
