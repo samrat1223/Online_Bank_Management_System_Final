@@ -1,6 +1,5 @@
 package com.samrat.obms.controller;
 
-//import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpSession;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.samrat.obms.model.Account;
-//import com.samrat.obms.model.Customer;
 import com.samrat.obms.service.AccountService;
 
 //Controller class to map the requests

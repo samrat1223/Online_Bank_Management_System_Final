@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-//import com.samrat.obms.model.Role;
+
 
 //User table
 @Entity
@@ -109,7 +109,6 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
-	
 
 }
 

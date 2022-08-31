@@ -1,15 +1,20 @@
 package com.samrat.obms;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -18,13 +23,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.samrat.obms.model.Account;
 import com.samrat.obms.model.Customer;
 import com.samrat.obms.model.Transaction;
+import com.samrat.obms.model.User;
 import com.samrat.obms.repository.AccountRepository;
 import com.samrat.obms.repository.CustomerRepository;
 import com.samrat.obms.repository.TransactionRepository;
+import com.samrat.obms.repository.UserRepository;
 import com.samrat.obms.service.AccountServiceImpl;
 import com.samrat.obms.service.CustomerService;
 import com.samrat.obms.service.CustomerServiceImpl;
 import com.samrat.obms.service.TransactionServiceImpl;
+import com.samrat.obms.service.UserServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -58,7 +66,12 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	@Autowired
 	private TransactionServiceImpl transactionServiceImpl;
 
-
+	@MockBean
+	private UserRepository userRepository;
+	
+	@Autowired
+	private UserServiceImpl userServiceImpl;
+	
 	// TestCase for getUser method
 	@Test
 	 void getAllCustomersTest() {
@@ -81,7 +94,6 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		assertEquals(customer,customerServiceImpl.saveCustomer(customer));
 	}
 	
-	
 	//Test Case for delete a user by Cust_Id 
 	@Test
 	 void deleteCustomerTest() {
@@ -90,6 +102,20 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		verify(customerRepository,times(1)).deleteById(8);
 	}
 	
+	
+	//Test Case for fetching user details by email
+	@Test
+	void findCustomerByEmailTest()
+	{
+		String email="san@gmail.com";
+		final Customer customer = new Customer(4, "sealdah", "Sany Das", "san123", "451444", "KJH655", "san@mail.com", 411445,
+				41211, "Gujrat", "san123", "fatherName", "2000-02-01", 414541);
+		
+		Mockito.<Optional<Customer>>when(customerRepository.findByemail(email)).thenReturn(Optional.of(customer));
+		
+		final Optional<Customer> expected = Optional.ofNullable(customerServiceImpl.findByemail(email));
+		assertThat(expected).isNotNull();
+	}
 	
 	//Test Cases for account service//
 	
@@ -112,6 +138,18 @@ class OnlineBankManagementSystemFinalApplicationTests {
 	}
 	
 	
+	//Test Case for get Account Details by AccountId
+	@Test
+	void getAccountByIdTest() {
+		 Long Accnt_No=1L;
+		final Account account = new Account(1,"savings",140814,"4547pl","2001-05-14",
+				"Kalighat","13501",48444,"fathername");
+		Mockito.<Optional<Account>>when(accountRepository.findByAccountNo(Accnt_No)).thenReturn(Optional.of(account));
+		final Optional<Account> expected = Optional.ofNullable(accountServiceImpl.getAccountById(Accnt_No));
+		assertThat(expected).isNotNull();
+	}
+	
+	
 	//Test Case for delete a user by Accnt_No
 	@Test
 	 void deleteAccountTest() {
@@ -119,6 +157,7 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		accountServiceImpl.deleteAccountById(Accnt_No);
 		verify(accountRepository,times(1)).deleteById((long) 12475);
 	}
+	
 	
 	//Test Cases for transaction service//
 	
@@ -131,6 +170,18 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		assertEquals(2,transactionServiceImpl.getAllTransaction().size());
 	}
 	
+	//TestCase for get a transaction by Id
+		@Test
+		void getTransactionById() 
+		{
+			final Long Transaction_Id = 1L;
+			final Transaction transaction = new Transaction(1,5701,"2022-11-05","Rani",
+					"Raghu","Credit",410178);
+			Mockito.<Optional<Transaction>>when(transactionRepository.getTransactionByTransac_Id(Transaction_Id)).thenReturn(Optional.of(transaction));
+			final Optional<Transaction> expected = Optional.ofNullable(transactionServiceImpl.getTransactionByTransac_Id(Transaction_Id));
+			assertThat(expected).isNotNull();
+		}
+	
 	//TestCase for saveTransaction
 	@Test
 	 void saveTransactionTest()
@@ -140,5 +191,6 @@ class OnlineBankManagementSystemFinalApplicationTests {
 		when(transactionRepository.save(transaction)).thenReturn(transaction);
 		assertEquals(transaction,transactionServiceImpl.saveTransaction(transaction));
 	}
+	
 }
 
