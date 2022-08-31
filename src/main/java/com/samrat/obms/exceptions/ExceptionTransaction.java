@@ -19,7 +19,7 @@ public class ExceptionTransaction {
 	
 	@ExceptionHandler(TransactionNotFound.class)
 	public final ModelAndView handleTrisha(Exception ex, WebRequest request) {
-		ModelAndView modelandview= new ModelAndView("ErrorPage3");
+		ModelAndView modelandview= new ModelAndView("ErrorPage4");
 		return modelandview;
 	}
 }
